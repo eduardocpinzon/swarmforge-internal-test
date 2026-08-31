@@ -37,11 +37,17 @@ Feature: Local name registration
     Then "Ana" is not shown in the registered-name list
     And "Bruno" is shown in the registered-name list
 
-  # Retain a name 4: shows saved names after reopening the screen
-  Scenario: Retain a name 4: shows saved names after reopening the screen
+  # Retain list changes 4: shows an edited and deleted list state after reopening the screen
+  Scenario: Retain list changes 4: shows an edited and deleted list state after reopening the screen
     Given "Ana" is registered
+    And "Bruno" is registered
+    And the person edits "Ana" to "Beatriz"
+    And saves the edit
+    And the person deletes "Bruno"
     When the person reopens the name registration screen
-    Then "Ana" is shown in the registered-name list
+    Then "Beatriz" is shown in the registered-name list
+    And "Ana" is not shown in the registered-name list
+    And "Bruno" is not shown in the registered-name list
 
   # Reject an empty name 5: keeps the list unchanged
   Scenario: Reject an empty name 5: keeps the list unchanged

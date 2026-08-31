@@ -28,7 +28,7 @@ Start with a fresh local user-data state, then open the name registration screen
 ## QA-4: Retain a saved name locally
 
 1. Reload or close and reopen the name registration screen through the normal user interface.
-2. Verify that `Bruno` is still visible.
+2. Verify that `Bruno` is still visible and `Beatriz` remains absent.
 
 ## QA-5: Reject an empty name
 
