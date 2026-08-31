@@ -38,8 +38,8 @@ Feature: Name registration visual feedback
     And "Ana" is not shown in the registered-name list after the transition
     And "Bruno" is shown in the registered-name list
 
-  # Reduce motion 4: keeps CRUD feedback clear without nonessential motion
-  Scenario: Reduce motion 4: keeps created, edited, and deleted names understandable
+  # Reduce edit motion 4: keeps edited names understandable without nonessential movement
+  Scenario: Reduce edit motion 4: keeps edited names understandable without nonessential movement
     Given the person has enabled reduced motion in their user environment
     And "Ana" is registered
     When the person edits "Ana" to "Beatriz"
