@@ -1,0 +1,14 @@
+.DS_Store
+.env
+.claude/
+.swarmforge/
+.worktrees/
+swarmforge/scripts/
+
+# Build/scratch output
+tmp/
+acceptance/generated/*
+!acceptance/generated/.gitkeep
+
+# Local scratch repo used for launch-command testing
+test-launch-command/

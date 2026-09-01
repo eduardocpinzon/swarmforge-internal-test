@@ -1,0 +1,5 @@
+{:paths ["src" "test" "acceptance"]
+ :tasks
+ {test:unit {:task (shell "bb -cp src:test -m test-runner")}
+  test:acceptance {:task (shell "gherkin-parser specifications/features/name-registration.feature tmp/name-registration.json && bb -cp . -m acceptance.generate tmp/name-registration.json acceptance/generated/name_registration.clj && bb -cp src:. acceptance/generated/name_registration.clj")}
+  test {:depends [test:unit test:acceptance]}}}
